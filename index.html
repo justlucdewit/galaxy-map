@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Galaxy map</title>
+		<meta charset="utf-8">
+		<style type="text/css" src="style.css">
+			body{
+
+			}
+			html{
+				margin: 0px;
+				padding: 0px;
+			}
+			canvas{
+				display: inline-block;
+				float: left;
+				width: auto;
+			}
+			#GEM{
+				display: inline-block;
+				float: left;
+				width: auto;
+				margin-right: 10px;
+			}
+		</style>
+		<script type="text/javascript" src="GEM.js"></script>
+		<script type="text/javascript" src="p5.min.js"></script>
+		<script type="text/javascript" src="AMP.js"></script>
+	</head>
+
+	<body>
+		<div id="GEM">
+			<h1>Galazy exploration menu</h1>
+			<h3>GEM 0.2</h3>
+			<p>
+				<form onsubmit="return false">
+					<input type="button" name="ps" value="previous star" onclick="prevStar();draw()">
+					<input type="button" name="ns" value="next star" onclick="nextStar();draw()">
+					<br>
+					<input type="input" name="manual" id="inputbox">
+					<input type="submit" value="find star" onclick="goToStar()">
+				</form>
+
+				<br>
+				name: <span id="name"></span><br>
+				type: <span id="type"></span><br>
+				mass: <span id="mass"></span><br>
+				<br>
+				x: <span id="x"></span><br>
+				y: <span id="y"></span><br>
+				z: <span id="z"></span><br>
+				<br>
+				coord: <span id="coord"></span><br>
+			<p>
+		</div>
+	</body>
+</html>

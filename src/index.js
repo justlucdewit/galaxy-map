@@ -6,13 +6,10 @@ import { renderStars } from './js/helpers/renderStars'
 
 const elements = getHtmlElements()
 const galaxy = generateGalaxy(galaxyConfig, 500000, {
-    twirlfactor: 400,
-    coreRadius: 20000,
-    strictness: 30,
-    sides: 2,
-    ellipse: false,
-    sigmoid: true,
-    sigmoidBound: 100000
+    twirlfactor: 200,
+    coreRadius: 30000,
+    strictness: 15,
+    sides: 2
 })
 
 const contexts = {

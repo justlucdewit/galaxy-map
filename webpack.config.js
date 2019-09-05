@@ -12,7 +12,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: buildFolder,
-        publicPath: '/'
+        publicPath: './'
     },
     module: {
         rules: [

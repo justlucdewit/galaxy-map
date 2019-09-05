@@ -3,6 +3,8 @@ import { getHtmlElements } from './js/helpers/getHtmlElements'
 import { galaxyConfig } from './js/constants'
 import { generateGalaxy } from './js/helpers/generateGalaxy'
 import { renderStars } from './js/helpers/renderStars'
+import { download } from './js/helpers/download'
+import { galaxyToCsv } from './js/helpers/galaxyToCsv'
 
 const elements = getHtmlElements()
 const galaxy = generateGalaxy(galaxyConfig, 500000, {
@@ -26,3 +28,11 @@ elements.canvases.stars.width = width
 elements.canvases.stars.height = height
 
 renderStars(contexts.stars, width, height, galaxy, false)
+
+elements.buttons.downloadJson.onclick = () => {
+    download(JSON.stringify(galaxy))
+}
+
+elements.buttons.downloadCsv.onclick = () => {
+    download(galaxyToCsv(galaxy),'galaxy-map','csv')
+}

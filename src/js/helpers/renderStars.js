@@ -3,6 +3,7 @@ export const renderStars = (
     width = 100,
     height = 100,
     stars = [],
+    zoom = 500,
     blend = true
 ) => {
     context.fillStyle = 'black'
@@ -10,7 +11,6 @@ export const renderStars = (
 
     context.save()
 
-    const zoom = 500
     const scale = 0.7
     context.translate(width / 2, height / 2)
 

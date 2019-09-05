@@ -6,7 +6,20 @@ export const getHtmlElements = () => {
         },
         buttons: {
             downloadJson: document.getElementById('download-json'),
-            downloadCsv: document.getElementById('download-csv')
+            downloadCsv: document.getElementById('download-csv'),
+            nextStar: document.getElementById('next-star'),
+            previousStar: document.getElementById('previous-star'),
+            findStar: document.getElementById('find-star')
+        },
+        inputs: {
+            starIndex: document.getElementById('find-star-input')
+        },
+        fields: {
+            name: document.getElementById('star-name'),
+            mass: document.getElementById('star-mass'),
+            type: document.getElementById('star-type'),
+            positionX: document.getElementById('star-position-x'),
+            positionY: document.getElementById('star-position-y')
         }
     }
 }

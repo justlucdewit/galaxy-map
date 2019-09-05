@@ -7,7 +7,7 @@
         "dev": "webpack-dev-server",
         "build": "cross-env NODE_ENV=production webpack",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist -o fork"
+        "deploy": "gh-pages -d dist -o origin"
     },
     "husky": {
         "hooks": {

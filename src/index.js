@@ -5,11 +5,10 @@ import { generateGalaxy } from './js/helpers/generateGalaxy'
 import { renderStars } from './js/helpers/renderStars'
 
 const elements = getHtmlElements()
-const galaxy = generateGalaxy(galaxyConfig, 100000, {
-    coreDensity: 10,
+const galaxy = generateGalaxy(galaxyConfig, 500000, {
     twirlfactor: 200,
-    coreRadius: 20000,
-    strictness: 7,
+    coreRadius: 30000,
+    strictness: 15,
     sides: 2
 })
 

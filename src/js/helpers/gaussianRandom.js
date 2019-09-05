@@ -11,9 +11,7 @@ export const gaussianRandom = (mean, standardDeviation) => {
     w = Math.sqrt((-2.0 * Math.log(w)) / w)
     const y1 = x1 * w
 
-    const retval = mean + standardDeviation * y1
-    if (retval > 0) return retval
-    return -retval
+    return mean + standardDeviation * y1
 }
 
 // returns a gaussian random function with the given mean and stdev.

@@ -1,4 +1,4 @@
-import './style.css'
+import './index.css'
 import { getHtmlElements } from './js/helpers/getHtmlElements'
 import { galaxyConfig } from './js/constants'
 import { generateGalaxy } from './js/helpers/generateGalaxy'
@@ -34,5 +34,5 @@ elements.buttons.downloadJson.onclick = () => {
 }
 
 elements.buttons.downloadCsv.onclick = () => {
-    download(galaxyToCsv(galaxy),'galaxy-map','csv')
+    download(galaxyToCsv(galaxy), 'galaxy-map', 'csv')
 }

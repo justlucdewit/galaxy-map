@@ -7,11 +7,13 @@ import { download } from './js/helpers/download'
 import { galaxyToCsv } from './js/helpers/galaxyToCsv'
 import { createCircleRenderer, createStarManager } from './js/helpers/setStar'
 
+console.log('got here')
+
 const elements = getHtmlElements()
 const galaxy = generateGalaxy(galaxyConfig, 500000, {
-    twirlfactor: 200,
+    twirlfactor: 300,
     coreRadius: 30000,
-    strictness: 15,
+    strictness: 30,
     sides: 2
 })
 

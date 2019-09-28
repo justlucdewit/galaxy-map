@@ -1,14 +1,15 @@
-const { resolve, join } = require('path')
+const { resolve } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const mode = process.env.NODE_ENV || 'development'
+const dev = mode === 'development'
 
 const sourceFolder = resolve(__dirname, 'src')
 const buildFolder = resolve(__dirname, 'dist')
 
 module.exports = {
     mode,
-    entry: resolve(sourceFolder, 'index'),
+    entry: resolve(sourceFolder, 'index.js'),
     output: {
         filename: 'bundle.js',
         path: buildFolder,
@@ -22,18 +23,29 @@ module.exports = {
             },
             {
                 test: /\.js$/i,
-                use: "babel-loader"
+                use: 'babel-loader'
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                        options: { minimize: !dev }
+                    }
+                ]
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: resolve(sourceFolder, 'index.html')
+            template: resolve(sourceFolder, 'index.html'),
+            publicPath: '/',
+            filename: 'index.html',
+            path: resolve(__dirname, 'dist')
         })
     ],
     devServer: {
-        disableHostCheck: true,
-        host: "0.0.0.0",
-        hot: true
+        hot: true,
+        publicPath: '/'
     }
 }

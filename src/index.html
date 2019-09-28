@@ -7,27 +7,45 @@
 
     <body>
         <div id="menu">
-            <div id="menu-title">Galazy exploration menu</div>
+            <div id="menu-title">Galaxy exploration menu</div>
 
             <div id="menu-controls" class="menu-card control-card">
-                <button class="menu-control-button">Previous star</button>
-                <button class="menu-control-button">Next star</button>
+                <button class="menu-control-button" id="previous-star">
+                    Previous star
+                </button>
+                <button class="menu-control-button" id="next-star">
+                    Next star
+                </button>
 
                 <input name="manual" type="number" id="find-star-input" />
                 <button class="menu-control-button" id="find-star">Find</button>
             </div>
 
             <div id="menu-data" class="menu-card">
-                name: <span id="name"></span><br />
-                type: <span id="type"></span><br />
-                mass: <span id="mass"></span><br />
-                <br />
-                x: <span id="x"></span><br />
-                y: <span id="y"></span><br />
-                z: <span id="z"></span><br />
-                <br />
-                coord: <span id="coord"></span><br />
-                <p></p>
+                <div class="data-row">
+                    <div class="data-label">Name</div>
+                    <div class="data-value" id="star-name"></div>
+                </div>
+
+                <div class="data-row">
+                    <div class="data-label">Type</div>
+                    <div class="data-value" id="star-type"></div>
+                </div>
+
+                <div class="data-row">
+                    <div class="data-label">Mass</div>
+                    <div class="data-value" id="star-mass"></div>
+                </div>
+
+                <div class="data-row">
+                    <div class="data-label">X</div>
+                    <div class="data-value" id="star-position-x"></div>
+                </div>
+
+                <div class="data-row">
+                    <div class="data-label">Y</div>
+                    <div class="data-value" id="star-position-y"></div>
+                </div>
             </div>
 
             <div class="menu-card control-card" id="export-data-card">

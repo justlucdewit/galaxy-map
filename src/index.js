@@ -5,12 +5,13 @@ import { generateGalaxy } from './js/helpers/generateGalaxy'
 import { renderStars } from './js/helpers/renderStars'
 import { download } from './js/helpers/download'
 import { galaxyToCsv } from './js/helpers/galaxyToCsv'
+import { createCircleRenderer, createStarManager } from './js/helpers/setStar'
 
 const elements = getHtmlElements()
 const galaxy = generateGalaxy(galaxyConfig, 500000, {
-    twirlfactor: 200,
+    twirlfactor: 300,
     coreRadius: 30000,
-    strictness: 15,
+    strictness: 30,
     sides: 2
 })
 
@@ -27,7 +28,9 @@ elements.canvases.circle.height = height
 elements.canvases.stars.width = width
 elements.canvases.stars.height = height
 
-renderStars(contexts.stars, width, height, galaxy, false)
+const zoom = 500
+
+renderStars(contexts.stars, width, height, galaxy, zoom, false)
 
 elements.buttons.downloadJson.onclick = () => {
     download(JSON.stringify(galaxy))
@@ -36,3 +39,17 @@ elements.buttons.downloadJson.onclick = () => {
 elements.buttons.downloadCsv.onclick = () => {
     download(galaxyToCsv(galaxy), 'galaxy-map', 'csv')
 }
+
+const circleRenderer = createCircleRenderer(
+    contexts.circle,
+    width,
+    height,
+    20,
+    zoom
+)
+
+const starManager = createStarManager(galaxy, elements, circleRenderer)
+
+elements.buttons.nextStar.onclick = starManager.increase
+elements.buttons.previousStar.onclick = starManager.decrease
+elements.buttons.findStar.onclick = starManager.find

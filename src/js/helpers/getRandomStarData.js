@@ -8,7 +8,7 @@ export const getStarDataFromBound = bound => {
 }
 
 export const getRandomStarData = config => {
-    const randomNumber = random
+    const randomNumber = random(0, 100)
 
     for (const bound of config.bounds) {
         if (randomNumber > bound.value) {

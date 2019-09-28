@@ -1,7 +1,6 @@
 import { gaussianRandom, gaussianSequence } from './gaussianRandom'
 import { polarToCartesian } from './polarToCartesian'
 import { random } from './random'
-import { sigmoid } from './sigmoid'
 
 const sequence = gaussianSequence(3000, 40000)
 

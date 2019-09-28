@@ -49,17 +49,26 @@ body {
 body > * {
     width: 100%;
     height: 100%;
+    max-height: 100vh;
 }
 
 div#canvases {
     position: relative;
-    min-height: var(--min-canvas-width);
+    background-color: var(--bg-raised-color);
 }
 
 div#canvases > * {
     position: absolute;
     width: 100%;
     height: 100%;
+
+    box-shadow: 3px 3px 4px 1px black;
+}
+
+body,
+div#canvases > * {
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 div#menu {
@@ -139,4 +148,20 @@ div#export-data-card {
 
 div#export-data-card > button {
     padding: var(--button-spacing);
+}
+
+div#menu-data {
+    display: flex;
+    flex-direction: column;
+}
+
+div.data-row {
+    padding: 1rem;
+    background-color: var(--bg-raised-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+div.data-row:not(:first-child) {
+    border-top: 1px solid rgba(128, 128, 128, 0.5);
 }

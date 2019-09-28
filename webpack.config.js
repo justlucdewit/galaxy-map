@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const { resolve, join } = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const mode = process.env.NODE_ENV || 'development'
@@ -19,6 +19,10 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.js$/i,
+                use: "babel-loader"
             }
         ]
     },
@@ -26,5 +30,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: resolve(sourceFolder, 'index.html')
         })
-    ]
+    ],
+    devServer: {
+        disableHostCheck: true,
+        host: "0.0.0.0",
+        hot: true
+    }
 }

@@ -10,7 +10,7 @@ export const getHtmlElements = () => {
             nextStar: document.getElementById('next-star'),
             previousStar: document.getElementById('previous-star'),
             findStar: document.getElementById('find-star'),
-            randomStar: document.getElementById('Random-star')
+            randomStar: document.getElementById('random-star')
         },
         inputs: {
             starIndex: document.getElementById('find-star-input')

@@ -53,3 +53,4 @@ const starManager = createStarManager(galaxy, elements, circleRenderer)
 elements.buttons.nextStar.onclick = starManager.increase
 elements.buttons.previousStar.onclick = starManager.decrease
 elements.buttons.findStar.onclick = starManager.find
+elements.buttons.randomStar.onclick = starManager.random

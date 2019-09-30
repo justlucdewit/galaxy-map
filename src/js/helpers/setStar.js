@@ -1,3 +1,5 @@
+import { randomInt } from './random'
+
 export const createCircleRenderer = (
     context,
     width,
@@ -64,6 +66,9 @@ export const createStarManager = (galaxy, elements, renderer) => {
 
                 currentStar = setStar(correctedIndex)
             } catch {}
+        },
+        random: () => {
+            currentStar = setStar(randomInt(0, galaxy.length))
         }
     }
 }

@@ -12,7 +12,8 @@ export const getHtmlElements = () => {
             randomStar: document.getElementById('random-star')
         },
         inputs: {
-            starIndex: document.getElementById('find-star-input')
+            starIndex: document.getElementById('find-star-input'),
+            import: document.getElementById('import-drop-zone')
         },
         fields: {
             name: document.getElementById('star-name'),

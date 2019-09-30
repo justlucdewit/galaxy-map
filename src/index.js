@@ -6,6 +6,10 @@ import { renderStars } from './js/helpers/renderStars'
 import { download } from './js/helpers/download'
 import { galaxyToCsv } from './js/helpers/galaxyToCsv'
 import { createCircleRenderer, createStarManager } from './js/helpers/setStar'
+import {
+    createGalaxyImporter,
+    preventDefaults
+} from './js/helpers/importGalaxy'
 
 const elements = getHtmlElements()
 const galaxy = generateGalaxy(galaxyConfig, 500000, {
@@ -30,8 +34,6 @@ elements.canvases.stars.height = height
 
 const zoom = 500
 
-renderStars(contexts.stars, width, height, galaxy, zoom, false)
-
 elements.buttons.downloadJson.onclick = () => {
     download(JSON.stringify(galaxy))
 }
@@ -48,9 +50,27 @@ const circleRenderer = createCircleRenderer(
     zoom
 )
 
+const setup = () => {
+    renderStars(contexts.stars, width, height, galaxy, zoom, false)
+    starManager.find()
+}
+
 const starManager = createStarManager(galaxy, elements, circleRenderer)
+const importGalaxy = createGalaxyImporter(
+    galaxy,
+    elements.inputs.import,
+    'hover',
+    setup
+)
 
 elements.buttons.nextStar.onclick = starManager.increase
 elements.buttons.previousStar.onclick = starManager.decrease
 elements.buttons.randomStar.onclick = starManager.random
 elements.inputs.starIndex.onkeyup = starManager.find
+
+elements.inputs.import.ondrop = importGalaxy.drop
+elements.inputs.import.ondragenter = importGalaxy.dragEnter
+elements.inputs.import.ondragleave = importGalaxy.dragLeave
+elements.inputs.import.ondragover = preventDefaults
+
+setup()

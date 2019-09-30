@@ -201,7 +201,7 @@ div#import-drop-zone {
     filter: brightness(0.7);
 }
 
-div#import-drop-zone:hover {
+div#import-drop-zone.hover {
     filter: brightness(1.3);
 }
 

@@ -101,7 +101,7 @@ div.menu-card {
 
 div#menu-controls {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(1fr, var(--button-grid-columns));
     grid-gap: var(--button-spacing);
 }
@@ -111,7 +111,6 @@ div.control-card > * {
     transition: filter 0.2s;
 }
 
-button#find-star,
 input#find-star-input {
     grid-column: 1 / calc(var(--button-grid-columns) + 1);
     width: 100%;

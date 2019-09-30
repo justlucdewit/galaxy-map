@@ -9,7 +9,6 @@ export const getHtmlElements = () => {
             downloadCsv: document.getElementById('download-csv'),
             nextStar: document.getElementById('next-star'),
             previousStar: document.getElementById('previous-star'),
-            findStar: document.getElementById('find-star'),
             randomStar: document.getElementById('random-star')
         },
         inputs: {

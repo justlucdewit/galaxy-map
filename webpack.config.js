@@ -24,15 +24,6 @@ module.exports = {
             {
                 test: /\.js$/i,
                 use: 'babel-loader'
-            },
-            {
-                test: /\.html$/,
-                use: [
-                    {
-                        loader: 'html-loader',
-                        options: { minimize: !dev }
-                    }
-                ]
             }
         ]
     },

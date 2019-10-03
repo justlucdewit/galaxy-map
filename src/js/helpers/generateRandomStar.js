@@ -6,7 +6,7 @@ const sequence = gaussianSequence(3000, 40000)
 
 export const generateRandomStar = (name = 'Unknown object', rules) => {
     let innerRadius = sequence()
-    let position = [0, 0]
+    let position = []
 
     if (innerRadius <= rules.coreRadius) {
         const angle = random(0, Math.PI * 2)

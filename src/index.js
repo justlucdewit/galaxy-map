@@ -74,3 +74,7 @@ elements.inputs.import.ondragleave = importGalaxy.dragLeave
 elements.inputs.import.ondragover = preventDefaults
 
 setup()
+
+window.setInterval(()=>{
+     console.log(galaxy[69].data.position)
+}, 3000);

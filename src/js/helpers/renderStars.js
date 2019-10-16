@@ -22,7 +22,7 @@ export const renderStars = (
     for (const star of stars) {
         context.fillRect(
             star.data.position[0] / zoom,
-            star.data.position[1] / zoom,
+            star.data.position[2] / zoom,
             scale,
             scale
         )

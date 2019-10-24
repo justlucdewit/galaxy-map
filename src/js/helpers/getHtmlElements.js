@@ -20,6 +20,7 @@ export const getHtmlElements = () => {
             mass: document.getElementById('star-mass'),
             type: document.getElementById('star-type'),
             positionX: document.getElementById('star-position-x'),
+            positionZ: document.getElementById('star-position-Z'),
             positionY: document.getElementById('star-position-y')
         }
     }

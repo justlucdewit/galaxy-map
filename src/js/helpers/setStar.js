@@ -30,6 +30,7 @@ export const createStarSetter = (galaxy, { fields }, renderer) => {
         fields.name.innerHTML = star.data.name
         fields.positionX.innerHTML = star.data.position[0]
         fields.positionY.innerHTML = star.data.position[1]
+        fields.positionZ.innerHTML = star.data.position[2]
         fields.mass.innerHTML = star.stats.mass
         fields.type.innerHTML = star.stats.type
 
